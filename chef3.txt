@@ -1,0 +1,17 @@
+[default]
+region = us-east-1
+aws_access_key_id = AKIAI3C6ABNZMXNFXIHA
+aws_secret_access_key = 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
+vpc_id = vpc-8ef0cde9
+~                                                                   
+
+
+node.default['cac_webservice']['s3_ezcac_cacws_artifact_dir_ezdi_int_data_bag_item'] = "ezdi-integration-bucket/ezcac/client_data/rajesh"
+
+
+execute "get_hello_artifact" do
+  user "ubuntu"
+  group "ubuntu"
+  cwd  "/home/ubuntu/"
+  command "s3cmd get #{artifact_dir} -c /home/ubuntu/.s3cfg"
+end
