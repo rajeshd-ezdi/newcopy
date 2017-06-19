@@ -13,5 +13,3 @@ execute "get_hello_artifact" do
   user "ubuntu"
   group "ubuntu"
   cwd  "/home/ubuntu/"
-  command "s3cmd get #{artifact_dir} -c /home/ubuntu/.s3cfg"
-end
